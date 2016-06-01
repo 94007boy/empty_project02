@@ -1,0 +1,36 @@
+
+<script type="text/template" id="js-topic-item-template">
+    <% for(var i=0; i < datalist.length; i++) {%>
+    <div class="topic-item-container" timestamp="<%= datalist[i].addtime %>">
+        <div class="item-title-container">
+            <a href="#"><img
+                    src="<%= datalist[i].uavatar %>"/></a>
+
+            <div class="item-title-name">
+                <a href="#"><%= datalist[i].unickname %></a><img
+                    src="<%= datalist[i].UserGroup.sgimg %>"/>
+            </div>
+            <p>我是<%= datalist[i].UserGroup.gname %></p>
+            <a href="#"><img src="images/icon_person_focus_no.png"/></a>
+        </div>
+        <div class="item-content-container">
+            <% if(datalist[i].Attachment.length !== 0) {%>
+            <img class="topic-item-attach" src="<%= datalist[i].Attachment[0].url %>"/>
+            <% } %>
+
+            <p><a href="#">#<%= datalist[i].topic.title %>#</a><%= datalist[i].content %></p>
+
+            <div class="topic-item-bottom-icon">
+                <a><img src="images/topic_praise2_unlike.png"/><%= datalist[i].praise %></a><a><img
+                    src="images/icon_topic_replay.png"/><%= datalist[i].replies %></a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</script>
+
+<script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+<script src="http://jtemplates.tpython.com/trunk/jquery-jtemplates_uncompressed.js"></script>
+<script src="javascripts/topiclist.js" type="text/javascript"></script>
+</body>
+</html>
